@@ -17,9 +17,11 @@ INSTALLED_APPS = [
 
     "home",
     "registration",
+    "debug_toolbar",
 ]
 
 MIDDLEWARE = [
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -66,4 +68,7 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 LOGIN_REDIRECT_URL = '/registration/'
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
 LOGOUT_REDIRECT_URL = '/accounts/login/'
